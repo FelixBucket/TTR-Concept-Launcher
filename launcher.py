@@ -281,7 +281,7 @@ class TTRLauncher(FSM):
         self.sendOutput(messagetypes.LAUNCHER_HIDE)
         while game.poll() is None:
             time.sleep(1.5)
-            os.system("/app/bin/wmclass") #Sets the WM_CLASS of Toontown Rewritten so that DE can show icon
+            #os.system("/app/bin/wmclass") #Sets the WM_CLASS of Toontown Rewritten so that DE can show icon
 
         if game.returncode == 0:
             self.sendOutput(messagetypes.LAUNCHER_CLEAR_PASSWORD)

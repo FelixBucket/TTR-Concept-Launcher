@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['main.py'],
-             pathex=['C:\\Users\\Connor\\Desktop\\Toontown Rewritten Dev Launcher Builder\\Toontown-Rewritten-Launcher-Rebuilt-master'],
+             pathex=['C:\\Users\\Connor\\Documents\\GitHub\\TTR-Concept-Launcher'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -30,4 +30,4 @@ exe = EXE(pyz,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=False , icon='C:\\Program Files (x86)\\Toontown Rewritten\\phase_3\\etc\\icon.ico')
+          console=True , icon='icon.ico')
