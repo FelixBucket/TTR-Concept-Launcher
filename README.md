@@ -3,7 +3,7 @@
 **Toontown Rewritten Concept Launcher Launcher** is a rebuilt copy of the Toontown Rewritten Source Code found inside of the [TTR Flatpak](https://www.xytime.xyz/flatpaks/ttr/index.html). This project was originally created by [UnicorNora](https://github.com/UnicorNora/). Not trying to do anything malicious here the entire launcher is owned by Toontown Rewritten Team just found it interesting they didnt compile it for the flatpak.
 
 ## 📝 Original Concept Design
-The original concept design for this launcher was drown out by @PurpleYoshi774 on Twitter, so a big thank you to you for the idea.
+The original concept design for this launcher was drawn by @PurpleYoshi774 on Twitter, so a big thank you to you for the idea.
 
 ## 📝 Note to TTR Staff
 If anyone from the TTR Team is reading this and wants this taken down please DM me on Discord at ProfessorZoom115#9971 to request for me to take it down.
