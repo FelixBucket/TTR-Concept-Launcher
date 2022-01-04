@@ -112,7 +112,7 @@ class LauncherPanel(QLabel):
         timer.start()
         self.versionLabel = QLabel(self)
         #self.versionLabel.move(100, 130)
-        self.versionLabel.move(1100, 970)
+        self.versionLabel.move(1050, 970)
         self.versionLabel.resize(200, 23)
         self.versionLabel.setStyleSheet(LABEL_CSS)
         self.versionLabel.mouseReleaseEvent = self.mouseReleaseEvent
