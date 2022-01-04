@@ -11,6 +11,7 @@ import settings, localizer, messagetypes
 from urllib.request import urlopen
 from urllib.parse import urlencode
 import os
+from  patcher import Patcher
 
 import http.client as httplib
 class TTRLauncher(FSM):
@@ -112,7 +113,7 @@ class TTRLauncher(FSM):
         if self.version is not None:
             pass
             try:
-                data = urlopen(settings.JSONLauncherDict.get(sys.platform, settings.DefaultJSONLauncherInfo))
+                data = urlopen(settings.JSONLauncherDict.get(Patcher.getPlatform(), settings.DefaultJSONLauncherInfo))
             except:
                 self.sendOutput((messagetypes.LAUNCHER_STATUS, localizer.UnableToCheckForUpdates))
                 self.dontClearMessage = True
@@ -269,9 +270,9 @@ class TTRLauncher(FSM):
     def enterLaunchGame(self):
         os.environ['TTR_PLAYCOOKIE'] = self.cookie
         os.environ['TTR_GAMESERVER'] = self.gameserver
-        if sys.platform == 'win32':
+        if Patcher.getPlatform() == 'win32':
             game = subprocess.Popen('TTREngine', creationflags=134217728)
-        elif sys.platform == 'win64':
+        elif Patcher.getPlatform() == 'win64':
             game = subprocess.Popen('TTREngine64', creationflags=134217728)
         else:
             modes = os.stat('TTREngine').st_mode

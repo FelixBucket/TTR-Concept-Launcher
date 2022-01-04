@@ -2,6 +2,7 @@ import json, sys, os
 from urllib.request import urlopen
 from urllib.parse import urlencode
 import requests
+import platform
 
 #Some nice constants
 MIRRORLIST = "https://www.toontownrewritten.com/api/mirrors"
@@ -45,6 +46,11 @@ if MF.status_code != 200:
 MANIFEST = MF.json()
 files = []
 
+def getPlatform():
+    if sys.platform == 'win32' and platform.machine().endswith('64'):
+        return 'win64' if not os.path.exists('.use_32bit') else 'win32'
+    return sys.platform
+
 def Patch(progressCallback=None, fileCallback=None):
     global count
     count = 0
@@ -53,7 +59,7 @@ def Patch(progressCallback=None, fileCallback=None):
         count += 1
         entry = MANIFEST.get(filename)
         print('Updating file %s of %s, %s...' % (count, len(MANIFEST), filename))
-        if sys.platform not in entry.get('only', ['darwin', 'linux2', 'win32', 'win64', 'darwin']):
+        if getPlatform() not in entry.get('only', ['darwin', 'linux2', 'win32', 'win64', 'darwin']):
             print('Skipped updating, file is not required on this platform.')
             continue
         if fileCallback is not None:
