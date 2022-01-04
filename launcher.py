@@ -271,6 +271,8 @@ class TTRLauncher(FSM):
         os.environ['TTR_GAMESERVER'] = self.gameserver
         if sys.platform == 'win32':
             game = subprocess.Popen('TTREngine', creationflags=134217728)
+        elif sys.platform == 'win64':
+            game = subprocess.Popen('TTREngine64', creationflags=134217728)
         else:
             modes = os.stat('TTREngine').st_mode
             if not modes & stat.S_IXUSR:

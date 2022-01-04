@@ -53,7 +53,7 @@ def Patch(progressCallback=None, fileCallback=None):
         count += 1
         entry = MANIFEST.get(filename)
         print('Updating file %s of %s, %s...' % (count, len(MANIFEST), filename))
-        if sys.platform not in entry.get('only', ['linux2', 'win32', 'darwin']):
+        if sys.platform not in entry.get('only', ['darwin', 'linux2', 'win32', 'win64', 'darwin']):
             print('Skipped updating, file is not required on this platform.')
             continue
         if fileCallback is not None:
