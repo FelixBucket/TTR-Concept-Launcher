@@ -47,7 +47,7 @@ class LauncherPanel(QLabel):
         #self.xButton.move(740, 49)
         self.xButton.move(1425, 80)
         #bg = QPixmap(resource_path('resources/Background.png'))
-        bg = QPixmap(resource_path('resources/Background-CogDo.png'))
+        bg = QPixmap(resource_path(str(sys._MEIPASS) + '/resources/Background-CogDo.png'))
         self.setPixmap(bg)
         self.newsTitle = QLabel(self)
         #self.newsTitle.move(180, 140)
@@ -259,7 +259,7 @@ class LauncherFrame(QMainWindow):
         # 48, 64, 128, 256]
         #for icon_size in icons:
         #    window_icon.addFile(resource_path('resources/icons/watch-icon-%d' % icon_size))
-        window_icon.addFile(resource_path('resources/icons/eyes'))
+        window_icon.addFile(resource_path(str(sys._MEIPASS) + '/resources/icons/eyes'))
         
         self.setWindowIcon(window_icon)
         self.setStyleSheet(LAUNCHER_CSS)

@@ -1,7 +1,7 @@
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QLabel
-import base64, gui.frame
+import base64, gui.frame, sys
 
 class ImageButton(QLabel):
 
@@ -10,9 +10,9 @@ class ImageButton(QLabel):
         self.parent = parent
         self.setMouseTracking(True)
         self.count = 0
-        self.normal = QPixmap(gui.frame.resource_path('resources/%s/normal.png' % name))
-        self.hover = QPixmap(gui.frame.resource_path('resources/%s/hover.png' % name))
-        self.depressed = QPixmap(gui.frame.resource_path('resources/%s/depressed.png' % name))
+        self.normal = QPixmap(gui.frame.resource_path(str(sys._MEIPASS) + '/resources/%s/normal.png' % name))
+        self.hover = QPixmap(gui.frame.resource_path(str(sys._MEIPASS) + '/resources/%s/hover.png' % name))
+        self.depressed = QPixmap(gui.frame.resource_path(str(sys._MEIPASS) + '/resources/%s/depressed.png' % name))
         self.isHovering = False
         self.isDepressed = False
         self.enabled = True
