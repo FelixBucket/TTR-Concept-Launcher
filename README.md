@@ -8,6 +8,9 @@ The original concept design for this launcher was drawn by @PurpleYoshi774 on Tw
 ## 📝 Note to TTR Staff
 If anyone from the TTR Team is reading this and wants this taken down please DM me on Discord at ProfessorZoom115#9971 to request for me to take it down.
 
+## 📝 Note to Linux users
+If you are building this launcher on Linux, you will need Python3 with PyInstaller. The Python 2 version does not work with this.
+
 ## 🗝 Built and managed with 
 * [Python](https://www.python.org/) - Coding Language
 * [PyInstaller](https://www.pyinstaller.org/) - Compiler
